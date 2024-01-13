@@ -5,6 +5,8 @@ class ListsController < ApplicationController
 
   def show
     list_selector
+    @bookmarks = Bookmark.all
+    # @bookmarks = Bookmark.select(params[:id])
   end
 
   def new

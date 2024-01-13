@@ -1,0 +1,9 @@
+<h3><%= @list.name %></h3>
+
+<%# <h4><%= @movie.title ></h4> %>
+
+<ol>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark.comment %></li>
+  <% end %>
+</ol>
