@@ -19,7 +19,7 @@ all_movies << Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt
 all_movies << Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
 all_movies.each do |movie|
-  puts "Created #{movie.name}"
+  puts "Created #{movie.title}"
 end
 
 puts "Finished!"

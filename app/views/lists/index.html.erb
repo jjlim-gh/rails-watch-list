@@ -1,0 +1,9 @@
+<h1>All lists 📃</h1>
+
+<div class="card">
+  <ul>
+  <% @lists.each do |list| %>
+    <li><h3><%= list.name %></h3></li>
+  <% end %>
+  </ul>
+</div>
