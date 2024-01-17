@@ -25,7 +25,8 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    list_selector.delete
+    list_selector
+    list.delete
     redirect_to lists_path()
   end
 

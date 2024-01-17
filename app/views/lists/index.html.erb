@@ -3,9 +3,9 @@
 
   <% @lists.each do |list| %>
     <div class="card col-6 m-2">
-      <div class="d-flex">
-        <h3><%= list.name %></h3>
-        <%= link_to "Delete List", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <div class="d-flex justify-content-between">
+        <h3 class="m-2"><%= list.name %></h3>
+        <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger m-2" %>
       </div>
       <%= link_to "See List", list_path(list), class: "btn btn-primary m-2" %>
     </div>

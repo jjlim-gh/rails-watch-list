@@ -3,6 +3,7 @@
   <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
 
   <div class="container m-2">
+
     <ul>
       <% @bookmarks.each do |bookmark| %>
         <li>
@@ -13,5 +14,8 @@
     </ul>
   </div>
 
-  <%= link_to "Go back...", lists_path %>
+  <div class="d-flex flex-column">
+    <%= link_to "Go back...", lists_path, class: "btn btn-primary m-2" %>
+    <%= link_to "Delete this list...", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger m-2" %>
+  </div>
 </div>
