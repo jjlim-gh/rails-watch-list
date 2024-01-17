@@ -5,8 +5,13 @@ class ListsController < ApplicationController
 
   def show
     list_selector
-    @bookmarks = Bookmark.all
-    # @bookmarks = Bookmark.select(params[:id])
+    @bookmarks = []
+    all_bookmarks = Bookmark.all
+    all_bookmarks.each do |bookmark|
+      if bookmark.list_id == params[:id].to_i
+        @bookmarks << bookmark
+      end
+    end
   end
 
   def new
@@ -17,6 +22,11 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.save
     redirect_to list_path(@list)
+  end
+
+  def destroy
+    list_selector.delete
+    redirect_to lists_path()
   end
 
   private
