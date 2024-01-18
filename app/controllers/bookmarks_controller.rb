@@ -18,6 +18,12 @@ class BookmarksController < ApplicationController
     redirect_to list_path(@bookmark.list)
   end
 
+  def destroy
+    @bookmark = Bookmark.find(params[:list_id])
+    @bookmark.delete
+    redirect_to list_path(params[:id])
+  end
+
   private
 
   def bookmark_params
