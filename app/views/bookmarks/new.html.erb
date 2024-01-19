@@ -1,5 +1,5 @@
 <div class="row container p-2 m-2">
-  <h1>New Bookmark</h1>
+  <h1>New Bookmark for <%= @list.name %></h1>
 
   <div class="card col-6 p-2 m-2">
     <%= simple_form_for [ @list, @bookmark ] do |f| %>
@@ -7,6 +7,10 @@
       <%= f.input :comment %>
       <%= f.submit %>
     <% end %>
+  </div>
+
+  <div class="col-6 p-2 m-2">
+    <%= link_to "Go back to '#{@list.name}' list...", list_path(@list), class: "btn btn-primary m-2" %>
   </div>
 
 </div>

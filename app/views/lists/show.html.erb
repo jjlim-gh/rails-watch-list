@@ -15,7 +15,7 @@
     </ul>
   </div>
 
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column col-6">
     <%= link_to "Go back...", lists_path, class: "btn btn-primary m-2" %>
     <%= link_to "Delete this list...", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger m-2" %>
   </div>
